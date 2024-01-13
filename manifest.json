@@ -1,0 +1,23 @@
+{
+    "name": "Wahi's Password Roulette",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    
+    "permissions": ["storage", "webNavigation", "scripting", "activeTab", "tabs"],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*"],
+            "js": ["scripts/runtime.js"]
+        }
+      ]
+}
